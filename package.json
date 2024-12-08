@@ -1,6 +1,6 @@
 {
   "name": "underquery",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A lightweight jQuery + Underscore inspired library for DOM manipulation and collection handling",
   "main": "dist/_query.min.js",
   "module": "dist/_query.js",
