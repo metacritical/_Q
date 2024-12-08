@@ -1,12 +1,33 @@
 {
-  "name": "_query",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "underquery",
+  "version": "1.0.1",
+  "description": "A lightweight jQuery + Underscore inspired library for DOM manipulation and collection handling",
+  "main": "dist/_query.min.js",
+  "module": "src/_query.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "keywords": [
+    "dom",
+    "query",
+    "selector",
+    "jquery",
+    "underscore",
+    "manipulation",
+    "collection",
+    "lightweight"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metacritical/_Q"
+  },
+  "bugs": {
+    "url": "https://github.com/metacritical/_Q/issues"
+  },
+  "homepage": "https://github.com/metacritical/_Q#readme"
 }
