@@ -1,8 +1,13 @@
-## [UnderQuery] a.k.a _Query
-#### jQuery + Underscore =  UnderQuery [ _Q ]
+## _Query.js (UnderQuery)
+> jQuery + Underscore = UnderQuery [ _Q ]
 
+A lightweight (~3KB minified) library that combines the power of jQuery-like DOM manipulation with Underscore-like collection handling.
 
-# _Query Method Dictionary (v1.0.0)
+## Installation
+
+```bash
+npm install _query-js
+```
 
 ## Core Usage
 ```javascript
@@ -22,6 +27,65 @@ _('.button')
             .rc('active');      // Remove class
     });
 ```
+
+
+
+### Browser
+```html
+
+```
+
+### ES6 Module
+```javascript
+import _ from '_query-js';
+```
+
+## Quick Examples
+
+### DOM Manipulation
+```javascript
+// Select and modify elements
+_('.button')
+    .ac('active', 'primary')    // Add classes
+    .css('color', 'blue')       // Set style
+    .on('click', function() {   // Add click handler
+        _(this)
+            .tc('clicked')      // Toggle class
+            .rc('active');      // Remove class
+    });
+
+// Chain multiple operations
+_('.container')
+    .sel('.item')              // Select all items
+    .each(el => {              // Iterate over each
+        _(el)
+            .ac('processed')
+            .attr('data-ready', 'true');
+    });
+```
+
+### Collection Handling
+```javascript
+// Array operations
+_([1, 2, 3, 4, 5])
+    .filt(n => n > 2)          // Filter numbers > 2
+    .map(n => n * 2)           // Double each number
+    .val();                    // Get final value: [6, 8, 10]
+
+// Object operations
+const users = [
+    { id: 1, name: 'John', active: true },
+    { id: 2, name: 'Jane', active: false },
+    { id: 3, name: 'Bob', active: true }
+];
+
+_(users)
+    .where({ active: true })   // Find active users
+    .pluk('name')             // Get their names
+    .val();                   // Result: ['John', 'Bob']
+
+```
+
 ## DOM Methods
 | Method | Description | Example |
 |--------|-------------|---------|
