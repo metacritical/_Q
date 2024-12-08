@@ -1,4 +1,6 @@
-const _ = (function() {
+constructor() {
+
+} _ = (function() {
     /**
      * Main Query constructor function
      * @param {string|array|object} input - Input selector string, array or object
