@@ -1,6 +1,6 @@
 {
   "name": "underquery",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "A lightweight jQuery + Underscore inspired library for DOM manipulation and collection handling",
   "main": "dist/_query.min.js",
   "module": "dist/_query.js",
@@ -15,8 +15,6 @@
     "README.md"
   ],
   "scripts": {
-    "build": "mkdir -p dist && cp src/_query.js dist/ && cp src/_query.min.js dist/",
-    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "dom",
