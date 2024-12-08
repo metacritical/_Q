@@ -1,4 +1,4 @@
-# _Q
+# [UnderQuery] a.k.a _Query
 jQuery + Underscore =  UnderQuery [ _Q ]
 
 
