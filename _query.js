@@ -8,51 +8,51 @@ const _ = (function() {
         if (!(this instanceof Q)) {
             return new Q(input);
         }
-        
+
         // Check if input is a DOM selector string
         if (typeof input === 'string' && (
-            input.includes('.') || 
-            input.includes('#') || 
-            input.includes('[') || 
+            input.includes('.') ||
+            input.includes('#') ||
+            input.includes('[') ||
             input.includes('<')
         )) {
             return new D([...document.querySelectorAll(input)]);
         }
-        
+
         return new C(input);
     }
 
     class D {
         constructor(elements) {
-            this.elems = elements;
+            this.el = elements;         // elements array
             this.length = elements.length;
             elements.forEach((el, i) => this[i] = el);
         }
 
         // Core DOM Methods
         each(fn) {
-            this.elems.forEach(fn);
+            this.el.forEach(fn);
             return this;
         }
 
         // Content Methods
         html(content) {
             if (content === undefined) {
-                return this.elems[0]?.innerHTML || '';
+                return this.el[0]?.innerHTML || '';
             }
             return this.each(el => el.innerHTML = content);
         }
 
         txt(content) {
             if (content === undefined) {
-                return this.elems[0]?.textContent || '';
+                return this.el[0]?.textContent || '';
             }
             return this.each(el => el.textContent = content);
         }
 
         attr(name, value) {
             if (value === undefined) {
-                return this.elems[0]?.getAttribute(name) || '';
+                return this.el[0]?.getAttribute(name) || '';
             }
             return this.each(el => el.setAttribute(name, value));
         }
@@ -85,7 +85,7 @@ const _ = (function() {
                 return this.each(el => Object.assign(el.style, prop));
             }
             if (value === undefined) {
-                return getComputedStyle(this.elems[0])[prop];
+                return getComputedStyle(this.el[0])[prop];
             }
             return this.each(el => el.style[prop] = value);
         }
@@ -101,7 +101,7 @@ const _ = (function() {
 
         clos(selector) {
             return new D(
-                Array.from(this.elems)
+                Array.from(this.el)
                     .map(el => el.closest(selector))
                     .filter(Boolean)
             );
@@ -109,7 +109,7 @@ const _ = (function() {
 
         par() {
             return new D(
-                [...new Set(Array.from(this.elems)
+                [...new Set(Array.from(this.el)
                     .map(el => el.parentElement)
                     .filter(Boolean))]
             );
@@ -159,9 +159,8 @@ const _ = (function() {
             );
         }
 
-        // Additional Collection Methods
         where(properties) {
-            return this.filt(item => 
+            return this.filt(item =>
                 Object.entries(properties).every(([key, value]) => item[key] === value)
             );
         }
@@ -267,7 +266,7 @@ const _ = (function() {
     Q.VERSION = '1.0.0';
     Q.NAME = '_Query';
 
-    // _ and _Q global calling functions.
+    //_ and _Q globally callable fn.
     window._ = Q;
     window._Q = Q;
 

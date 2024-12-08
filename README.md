@@ -1,5 +1,5 @@
-# [UnderQuery] a.k.a _Query
-jQuery + Underscore =  UnderQuery [ _Q ]
+## [UnderQuery] a.k.a _Query
+#### jQuery + Underscore =  UnderQuery [ _Q ]
 
 
 # _Query Method Dictionary (v1.0.0)
@@ -22,11 +22,10 @@ _('.button')
             .rc('active');      // Remove class
     });
 ```
-
 ## DOM Methods
 | Method | Description | Example |
 |--------|-------------|---------|
-| `html()` | Get/set HTML content | ```javascript _('div').html('content')``` |
+| `html()` | Get/set HTML content | `_('div').html('content')` |
 | `txt()` | Get/set text content | `_('p').txt('text')` |
 | `attr()` | Get/set attributes | `_('img').attr('src', 'url')` |
 | `ac()` | Add CSS class(es) | `_('.btn').ac('active')` |
