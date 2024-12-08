@@ -1,6 +1,4 @@
-constructor() {
-
-} _ = (function() {
+const _ = (function() {
     /**
      * Main Query constructor function
      * @param {string|array|object} input - Input selector string, array or object
@@ -268,9 +266,22 @@ constructor() {
     Q.VERSION = '1.0.0';
     Q.NAME = '_Query';
 
-    //_ and _Q globally callable fn.
-    window._ = Q;
-    window._Q = Q;
+    //_ and _Q globally
+    // window._ = Q;
+    // window._Q = Q;
 
     return Q;
 })();
+
+
+// ES6 module Export support.
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = Q;
+} else if (typeof define === 'function' && define.amd) {
+    define(function() { return Q; });
+} else if (typeof window !== 'undefined') {
+    window._ = Q;
+    window._Q = Q;
+}
+
+export default Q;

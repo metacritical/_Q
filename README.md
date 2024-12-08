@@ -6,7 +6,7 @@ A lightweight (~3KB minified) library that combines the power of jQuery-like DOM
 ## Installation
 
 ```bash
-npm install _query-js
+npm install underquery
 ```
 
 ## Core Usage
@@ -37,7 +37,15 @@ _('.button')
 
 ### ES6 Module
 ```javascript
-import _ from '_query-js';
+
+// ES6 import
+import _ from 'underquery';
+
+// CommonJS require
+const _ = require('underquery');
+
+// Browser script tag
+<script src="node_modules/underquery/dist/_query.min.js"></script>
 ```
 
 ## Quick Examples
